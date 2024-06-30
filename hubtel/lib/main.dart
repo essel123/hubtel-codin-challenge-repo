@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,23 +18,70 @@ class MyApp extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                    const EdgeInsets.symmetric(vertical: 50, horizontal: 35),
                 child: Container(
                   height: 40,
-                  decoration: const BoxDecoration(color: Colors.grey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        height: 25,
-                        width: 100,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                  decoration: const BoxDecoration(
+                  color:  Color.fromARGB(255, 229, 226, 226),
+                    borderRadius: BorderRadius.all(Radius.circular(3)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 100,
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(3))),
+                          child: const Center(
+                            child: Text(
+                              "History",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ),
-                        child: const Center(child: Text("History")),
-                      ),
-                      const Text("Transaction Summary")
-                    ],
+                        const Text(
+                          "Transaction Summary",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color.fromARGB(255, 143, 126, 126),
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const Divider(
+                indent: BorderSide.strokeAlignOutside,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 30,
+                  horizontal: 30,
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 229, 226, 226),
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      hintText: "Search",
+                      fillColor: Colors.grey,
+                      prefixIcon: Icon(Icons.search),
+                      border: InputBorder.none,
+                    ),
                   ),
                 ),
               )
@@ -47,7 +95,7 @@ class MyApp extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.home,
+                      Icons.home_filled,
                     ),
                     label: "Home"),
                 BottomNavigationBarItem(
